@@ -1,0 +1,51 @@
+<div *ngIf="articles.length > 0">
+    <table mat-table [dataSource]="articles">
+  
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let article"> {{ article.id }} </td>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let article"> {{ article.nom }} </td>
+      </ng-container>
+  
+   
+      <ng-container matColumnDef="prix">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let article"> {{ article.prix | currency }} </td>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="dateLivraison">
+        <th mat-header-cell *matHeaderCellDef> Delivery Date </th>
+        <td mat-cell *matCellDef="let article"> {{ article.dateLivraison | date }} </td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let article">
+     
+          <button mat-button (click)="deleteArticle(article.id)">Delete</button>
+  
+   
+          <button mat-button [routerLink]="['/edit', article.id]">Edit</button>
+        </td>
+      </ng-container>
+  
+ 
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  
+
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+  </div>
+  
+  <div *ngIf="articles.length === 0">
+    <p>No articles found.</p>
+  </div>
