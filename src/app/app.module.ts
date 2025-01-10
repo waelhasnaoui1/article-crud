@@ -7,9 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArticleListComponent } from './components/article-list/article-list.component';
 import { ArticleFormComponent } from './components/article-form/article-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table'; // Import MatTableModule
-import { MatPaginatorModule } from '@angular/material/paginator'; // For pagination
-import { MatSortModule } from '@angular/material/sort'; // For sorting (optional)
+import { MatTableModule } from '@angular/material/table'; 
+import { MatPaginatorModule } from '@angular/material/paginator'; 
+import { MatSortModule } from '@angular/material/sort'; 
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
